@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import tavro.cast.components.BottomNavigationBar
 import tavro.cast.components.MovieListItem
 import tavro.cast.components.TabHeader
 
@@ -14,9 +15,9 @@ import tavro.cast.components.TabHeader
 @Preview
 fun App() {
     MaterialTheme {
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+        Column(Modifier.fillMaxWidth()) {
             TabHeader(activeTab = "Watches")
-            Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+            Column(Modifier.fillMaxWidth().weight(1.0f), horizontalAlignment = Alignment.CenterHorizontally) {
                 MovieListItem(
                     title = "Test Movie",
                     directorName = "Test Director",
@@ -33,6 +34,7 @@ fun App() {
                     timeStamp = "X min ago"
                 )
             }
+            BottomNavigationBar()
         }
     }
 }
