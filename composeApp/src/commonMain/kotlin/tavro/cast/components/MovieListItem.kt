@@ -34,7 +34,10 @@ fun MovieListItem(
     modifier: Modifier = Modifier
 ) {
     Row(
-        modifier = modifier.fillMaxWidth().background(Color.Black).padding(16.dp, 8.dp),
+        modifier = modifier
+            .fillMaxWidth()
+            .background(Color.Black)
+            .padding(16.dp, 8.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Column {

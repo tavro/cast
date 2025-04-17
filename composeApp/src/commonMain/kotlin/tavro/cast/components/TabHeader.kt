@@ -11,7 +11,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -27,7 +26,6 @@ fun TabHeader(
     Column(
         modifier = modifier
             .fillMaxWidth()
-            .statusBarsPadding()
             .background(Color.Black)
             .padding(16.dp, 8.dp),
         horizontalAlignment = Alignment.Start
