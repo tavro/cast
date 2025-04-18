@@ -8,12 +8,8 @@
 package org.example.project
 
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -22,14 +18,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import cast.composeapp.generated.resources.Res
 import cast.composeapp.generated.resources.compose_multiplatform
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import tavro.cast.components.BottomNavigationBar
 import tavro.cast.components.BottomNavigationItem
-import tavro.cast.components.MovieListItem
 import tavro.cast.components.TabHeader
 
 @Composable
@@ -38,7 +32,8 @@ fun App() {
     val tabs = listOf(
         BottomNavigationItem("Watches", Res.drawable.compose_multiplatform),
         BottomNavigationItem("Reports", Res.drawable.compose_multiplatform),
-        BottomNavigationItem("Library", Res.drawable.compose_multiplatform)
+        BottomNavigationItem("Library", Res.drawable.compose_multiplatform),
+        BottomNavigationItem("Settings", Res.drawable.compose_multiplatform)
     )
     var selectedTab by remember { mutableStateOf(0) }
 
@@ -63,76 +58,10 @@ fun App() {
                     .fillMaxSize()
             ) {
                 when (selectedTab) {
-                    0 -> Column(
-                        Modifier
-                            .fillMaxWidth()
-                            .verticalScroll(rememberScrollState()),
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        MovieListItem(
-                            title = "Test Movie",
-                            directorName = "Test Director",
-                            timeStamp = "X min ago"
-                        )
-                        MovieListItem(
-                            title = "Test Movie",
-                            directorName = "Test Director",
-                            timeStamp = "X min ago"
-                        )
-                        MovieListItem(
-                            title = "Test Movie",
-                            directorName = "Test Director",
-                            timeStamp = "X min ago"
-                        )
-                        MovieListItem(
-                            title = "Test Movie",
-                            directorName = "Test Director",
-                            timeStamp = "X min ago"
-                        )
-                        MovieListItem(
-                            title = "Test Movie",
-                            directorName = "Test Director",
-                            timeStamp = "X min ago"
-                        )
-                        MovieListItem(
-                            title = "Test Movie",
-                            directorName = "Test Director",
-                            timeStamp = "X min ago"
-                        )
-                        MovieListItem(
-                            title = "Test Movie",
-                            directorName = "Test Director",
-                            timeStamp = "X min ago"
-                        )
-                        MovieListItem(
-                            title = "Test Movie",
-                            directorName = "Test Director",
-                            timeStamp = "X min ago"
-                        )
-                        MovieListItem(
-                            title = "Test Movie",
-                            directorName = "Test Director",
-                            timeStamp = "X min ago"
-                        )
-                        MovieListItem(
-                            title = "Test Movie",
-                            directorName = "Test Director",
-                            timeStamp = "X min ago"
-                        )
-                        MovieListItem(
-                            title = "Test Movie",
-                            directorName = "Test Director",
-                            timeStamp = "X min ago"
-                        )
-                        MovieListItem(
-                            title = "Test Movie",
-                            directorName = "Test Director",
-                            timeStamp = "X min ago"
-                        )
-                    }
-
+                    0 -> WatchesScreen()
                     1 -> Text("Reports")
                     2 -> Text("Library")
+                    3 -> Text("Settings")
                 }
             }
         }
