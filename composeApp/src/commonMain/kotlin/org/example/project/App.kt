@@ -7,6 +7,7 @@
 
 package org.example.project
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -19,6 +20,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import cast.composeapp.generated.resources.Res
 import cast.composeapp.generated.resources.compose_multiplatform
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -56,12 +58,13 @@ fun App() {
                 modifier = Modifier
                     .padding(innerPadding)
                     .fillMaxSize()
+                    .background(color = Color.Black)
             ) {
                 when (selectedTab) {
                     0 -> WatchesScreen()
-                    1 -> Text("Reports")
-                    2 -> Text("Library")
-                    3 -> Text("Settings")
+                    1 -> Text("Reports", color = Color.White)
+                    2 -> LibraryScreen()
+                    3 -> Text("Settings", color = Color.White)
                 }
             }
         }
