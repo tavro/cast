@@ -62,7 +62,7 @@ fun App() {
             ) {
                 when (selectedTab) {
                     0 -> WatchesScreen()
-                    1 -> Text("Reports", color = Color.White)
+                    1 -> ReportsScreen()
                     2 -> LibraryScreen()
                     3 -> Text("Settings", color = Color.White)
                 }
