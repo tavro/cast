@@ -35,6 +35,7 @@ fun App() {
         BottomNavigationItem("Watches", Res.drawable.compose_multiplatform),
         BottomNavigationItem("Reports", Res.drawable.compose_multiplatform),
         BottomNavigationItem("Library", Res.drawable.compose_multiplatform),
+        BottomNavigationItem("Add", Res.drawable.compose_multiplatform),
         BottomNavigationItem("Settings", Res.drawable.compose_multiplatform)
     )
     var selectedTab by remember { mutableStateOf(0) }
@@ -64,7 +65,8 @@ fun App() {
                     0 -> WatchesScreen()
                     1 -> ReportsScreen()
                     2 -> LibraryScreen()
-                    3 -> Text("Settings", color = Color.White)
+                    3 -> Text(text = "Add Movie", color = Color.White)
+                    4 -> SettingsScreen()
                 }
             }
         }
