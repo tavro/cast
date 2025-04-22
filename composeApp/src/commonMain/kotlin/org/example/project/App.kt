@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -65,7 +64,7 @@ fun App() {
                     0 -> WatchesScreen()
                     1 -> ReportsScreen()
                     2 -> LibraryScreen()
-                    3 -> Text(text = "Add Movie", color = Color.White)
+                    3 -> AddMovieScreen()
                     4 -> SettingsScreen()
                 }
             }
