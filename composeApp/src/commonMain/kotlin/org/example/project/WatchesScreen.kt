@@ -14,7 +14,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import tavro.cast.components.MovieListItem
+import tavro.cast.ui.components.MovieListItem
 
 @Composable
 fun WatchesScreen(modifier: Modifier = Modifier) {

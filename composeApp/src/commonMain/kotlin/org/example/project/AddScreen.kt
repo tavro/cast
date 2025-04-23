@@ -18,9 +18,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import tavro.cast.models.Actor
-import tavro.cast.models.Director
-import tavro.cast.models.Movie
+import tavro.cast.data.models.Actor
+import tavro.cast.data.models.Director
+import tavro.cast.data.models.Movie
 import kotlin.random.Random
 
 /*

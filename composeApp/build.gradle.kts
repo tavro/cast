@@ -107,6 +107,7 @@ dependencies {
     implementation(libs.androidx.foundation.android)
     implementation(libs.androidx.ui.geometry.android)
     implementation(libs.androidx.ui.graphics.android)
+    implementation(libs.androidx.constraintlayout)
     debugImplementation(compose.uiTooling)
 }
 

@@ -23,9 +23,9 @@ import androidx.compose.ui.graphics.Color
 import cast.composeapp.generated.resources.Res
 import cast.composeapp.generated.resources.compose_multiplatform
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import tavro.cast.components.BottomNavigationBar
-import tavro.cast.components.BottomNavigationItem
-import tavro.cast.components.TabHeader
+import tavro.cast.ui.components.BottomNavigationBar
+import tavro.cast.ui.components.BottomNavigationItem
+import tavro.cast.ui.components.TabHeader
 
 @Composable
 @Preview

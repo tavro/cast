@@ -5,7 +5,7 @@
  * Licensed under the MIT License.
  */
 
-package tavro.cast.components
+package tavro.cast.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

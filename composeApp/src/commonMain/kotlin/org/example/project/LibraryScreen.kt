@@ -9,8 +9,8 @@ package org.example.project
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
-import tavro.cast.components.Carousel
-import tavro.cast.components.CarouselItem
+import tavro.cast.ui.components.Carousel
+import tavro.cast.ui.components.CarouselItem
 
 @Composable
 fun LibraryScreen() {

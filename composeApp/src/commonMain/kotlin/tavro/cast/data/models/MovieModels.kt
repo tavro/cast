@@ -5,12 +5,14 @@
  * Licensed under the MIT License.
  */
 
-package tavro.cast.models
+package tavro.cast.data.models
 
-// import kotlinx.datetime.Instant
+// import androidx.room.vo.Entity
+// import androidx.room.vo.PrimaryKey
 
+// @Entity
 data class Movie(
-    val id: Long,
+    /* @PrimaryKey */ val id: Long,
     val title: String,
     val lengthInMinutes: Int,
     val directors: List<Director>,
@@ -18,21 +20,16 @@ data class Movie(
     val coverImageUrl: String?
 )
 
+// @Entity
 data class Director(
-    val id: Long,
+    /* @PrimaryKey */ val id: Long,
     val name: String,
     val imageUrl: String?
 )
 
+// @Entity
 data class Actor(
-    val id: Long,
+    /* @PrimaryKey */ val id: Long,
     val name: String,
     val imageUrl: String?
-)
-
-data class ViewingSession(
-    val id: Long,
-    val movieId: Long,
-    // val startedAt: Instant,
-    // val finishedAt: Instant?,
 )
