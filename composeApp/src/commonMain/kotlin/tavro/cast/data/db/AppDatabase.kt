@@ -7,19 +7,25 @@
 
 package tavro.cast.data.db
 
-// import androidx.room.RoomDatabase
-// import androidx.room.vo.Database
-// import tavro.cast.data.dao.MovieDao
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import tavro.cast.data.dao.MovieDao
 import tavro.cast.data.models.Actor
 import tavro.cast.data.models.Director
 import tavro.cast.data.models.Movie
+import tavro.cast.data.models.MovieActorCrossRef
+import tavro.cast.data.models.MovieDirectorCrossRef
 
-/*
 @Database(
-    entities = [Movie::class, Director::class, Actor::class],
+    entities = [
+        Movie::class,
+        Director::class,
+        Actor::class,
+        MovieActorCrossRef::class,
+        MovieDirectorCrossRef::class
+    ],
     version = 1
 )
-abstract class AppDatabase : RoomDatabase() {
+abstract class CastDatabase : RoomDatabase() {
     abstract fun movieDao(): MovieDao
 }
-*/

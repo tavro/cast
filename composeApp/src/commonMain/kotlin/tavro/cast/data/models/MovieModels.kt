@@ -7,29 +7,57 @@
 
 package tavro.cast.data.models
 
-// import androidx.room.vo.Entity
-// import androidx.room.vo.PrimaryKey
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-// @Entity
+@Entity
 data class Movie(
-    /* @PrimaryKey */ val id: Long,
+    @PrimaryKey(autoGenerate = true) val id: Long,
     val title: String,
     val lengthInMinutes: Int,
-    val directors: List<Director>,
-    val actors: List<Actor>,
     val coverImageUrl: String?
 )
 
-// @Entity
+@Entity
 data class Director(
-    /* @PrimaryKey */ val id: Long,
+    @PrimaryKey(autoGenerate = true) val id: Long,
     val name: String,
     val imageUrl: String?
 )
 
-// @Entity
+@Entity
 data class Actor(
-    /* @PrimaryKey */ val id: Long,
+    @PrimaryKey(autoGenerate = true) val id: Long,
     val name: String,
     val imageUrl: String?
 )
+
+@Entity(primaryKeys = ["movieId", "directorId"])
+data class MovieDirectorCrossRef(
+    val movieId: Long,
+    val directorId: Long
+)
+
+@Entity(primaryKeys = ["movieId", "actorId"])
+data class MovieActorCrossRef(
+    val movieId: Long,
+    val actorId: Long
+)
+
+/*
+data class MovieWithDirectorsAndActors(
+    @Embedded val movie: Movie,
+    @Relation(
+        parentColumn = "id",
+        entityColumn = "id",
+        associateBy = Junction(MovieDirectorCrossRef::class)
+    )
+    val directors: List<Director>,
+    @Relation(
+        parentColumn = "id",
+        entityColumn = "id",
+        associateBy = Junction(MovieActorCrossRef::class)
+    )
+    val actors: List<Actor>
+)
+*/

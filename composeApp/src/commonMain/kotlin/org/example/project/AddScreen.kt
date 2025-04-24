@@ -44,13 +44,15 @@ TODO:
 
 @Composable
 fun AddMovieScreen() {
-    MovieInputForm { movie ->
-        println("Movie created: $movie") // TODO: Store in database
+    MovieInputForm { movie, actors, directors ->
+        println("Movie created: $movie")
+        println("Actors created: $actors")
+        println("Directors created: $directors")
     }
 }
 
 @Composable
-fun MovieInputForm(onSave: (Movie) -> Unit) {
+fun MovieInputForm(onSave: (Movie, List<Actor>, List<Director>) -> Unit) {
     var title by remember { mutableStateOf("") }
     var length by remember { mutableStateOf("") }
     var coverImageUrl by remember { mutableStateOf("") }
@@ -152,10 +154,10 @@ fun MovieInputForm(onSave: (Movie) -> Unit) {
                         id = Random.nextLong(), // NOTE: Temporary
                         title = title,
                         lengthInMinutes = length.toInt(),
-                        directors = directors,
-                        actors = actors,
                         coverImageUrl = coverImageUrl.takeIf { it.isNotBlank() }
-                    )
+                    ),
+                    actors,
+                    directors
                 )
             }
         }) {

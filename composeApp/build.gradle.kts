@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    id("com.google.devtools.ksp")
 }
 
 kotlin {
@@ -108,6 +109,8 @@ dependencies {
     implementation(libs.androidx.ui.geometry.android)
     implementation(libs.androidx.ui.graphics.android)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.room.compiler)
     debugImplementation(compose.uiTooling)
 }
 
